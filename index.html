@@ -4,11 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>A Little Reminder for You ♡</title>
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* GENERAL STYLING */
+
 * {
     margin: 0;
     padding: 0;
@@ -17,10 +21,29 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #fff0f3, #fce4ec, #f5e6ff);
-    font-family: 'Quicksand', sans-serif;
+    background:
+        radial-gradient(circle at 10% 20%, #fffafa, transparent 30%),
+        radial-gradient(circle at 90% 80%, #f4d9e8, transparent 35%),
+        linear-gradient(135deg, #fff0f3, #fce4ec, #f5e6ff);
     color: #755665;
+    font-family: 'Quicksand', sans-serif;
     overflow-x: hidden;
+}
+
+/* FULL SCREEN CONTAINER */
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: 100vh;
+    padding: 75px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
 }
 
 /* FLOATING HEARTS */
@@ -41,23 +64,101 @@ body {
         transform: translateY(0) rotate(0deg);
         opacity: 0;
     }
-    20% { opacity: 0.7; }
+
+    20% {
+        opacity: 0.7;
+    }
+
     100% {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
     }
 }
 
-/* MAIN CONTENT */
+/* SCRAPBOOK STICKERS */
 
-.container {
-    position: relative;
-    z-index: 1;
-    max-width: 850px;
-    margin: auto;
-    padding: 70px 25px;
-    text-align: center;
+.sticker {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    font-size: clamp(25px, 4vw, 55px);
+    opacity: 0.85;
+    animation: gentleFloat 5s ease-in-out infinite;
 }
+
+.sticker-1 {
+    top: 8%;
+    left: 8%;
+    transform: rotate(-15deg);
+}
+
+.sticker-2 {
+    top: 20%;
+    right: 9%;
+    animation-delay: 1s;
+}
+
+.sticker-3 {
+    top: 48%;
+    left: 4%;
+    animation-delay: 2s;
+}
+
+.sticker-4 {
+    bottom: 12%;
+    right: 8%;
+    animation-delay: 1.5s;
+}
+
+.sticker-5 {
+    top: 65%;
+    left: 12%;
+    font-size: 45px;
+}
+
+.sticker-6 {
+    top: 9%;
+    right: 30%;
+    font-size: 30px;
+    animation-delay: 2.5s;
+}
+
+.sticker-7 {
+    bottom: 8%;
+    left: 30%;
+    animation-delay: 1s;
+}
+
+.sticker-8 {
+    top: 38%;
+    right: 4%;
+    transform: rotate(12deg);
+}
+
+.sticker-9 {
+    bottom: 20%;
+    right: 25%;
+    font-size: 40px;
+}
+
+.sticker-10 {
+    top: 15%;
+    left: 38%;
+    font-size: 32px;
+    color: #d99ab5;
+}
+
+@keyframes gentleFloat {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -12px;
+    }
+}
+
+/* HEADER */
 
 .tag {
     display: inline-block;
@@ -93,30 +194,55 @@ h1 {
 }
 
 @keyframes wiggle {
-    0%, 100% { transform: rotate(-8deg); }
-    50% { transform: rotate(8deg); }
+    0%, 100% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
 }
 
-/* LETTER */
+/* SCRAPBOOK LETTER */
 
 .letter {
-    max-width: 650px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1000px;
+    padding: 55px 70px;
     margin: 35px auto;
-    padding: 45px 35px;
-    background: rgba(255,255,255,0.65);
-    border: 1px solid rgba(255,255,255,0.9);
-    border-radius: 25px;
-    box-shadow: 0 15px 45px rgba(174,115,145,0.12);
+    background: rgba(255,255,255,0.78);
+    border: 1px solid white;
+    border-radius: 8px 25px 12px 25px;
+    box-shadow: 5px 10px 35px rgba(174,115,145,0.15);
+    transform: rotate(-1deg);
     text-align: left;
     line-height: 2;
-    font-size: 15px;
+    font-size: 16px;
 }
+
+/* DECORATIVE TAPE */
+
+.letter::before {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 28px;
+    background: rgba(232,179,198,0.55);
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%) rotate(2deg);
+    border-radius: 3px;
+}
+
+/* LETTER HEADING */
 
 .letter h2 {
     font-family: 'Dancing Script', cursive;
-    font-size: 36px;
+    font-size: 42px;
     color: #c17e9c;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
 }
 
@@ -132,9 +258,11 @@ h1 {
     margin-top: 25px;
 }
 
-/* BUTTON */
+/* SURPRISE BUTTON */
 
 button {
+    position: relative;
+    z-index: 2;
     border: none;
     background: #d99ab5;
     color: white;
@@ -153,8 +281,12 @@ button:hover {
     background: #c47f9e;
 }
 
+/* SURPRISE MESSAGE */
+
 #surprise {
     display: none;
+    position: relative;
+    z-index: 2;
     margin: 30px auto;
     font-family: 'Dancing Script', cursive;
     font-size: 35px;
@@ -167,17 +299,64 @@ button:hover {
         opacity: 0;
         transform: translateY(15px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* FOOTER */
+
 .footer {
+    position: relative;
+    z-index: 2;
     margin-top: 65px;
     font-size: 12px;
     letter-spacing: 2px;
     opacity: 0.7;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 700px) {
+
+    .container {
+        padding: 60px 20px;
+    }
+
+    .letter {
+        padding: 40px 25px;
+        transform: rotate(0deg);
+    }
+
+    .letter p {
+        font-size: 14px;
+    }
+
+    .letter h2 {
+        font-size: 34px;
+    }
+
+    .sticker {
+        font-size: 25px;
+    }
+
+    .sticker-1 {
+        left: 2%;
+    }
+
+    .sticker-2 {
+        right: 2%;
+    }
+
+    .sticker-3 {
+        left: 1%;
+    }
+
+    .sticker-4 {
+        right: 2%;
+    }
 }
 
 </style>
@@ -187,7 +366,24 @@ button:hover {
 
 <div class="container">
 
-    <div class="tag">A little something for you ♡</div>
+    <!-- SCRAPBOOK DECORATIONS -->
+
+    <div class="sticker sticker-1">🎀</div>
+    <div class="sticker sticker-2">🌷</div>
+    <div class="sticker sticker-3">🦋</div>
+    <div class="sticker sticker-4">✿</div>
+    <div class="sticker sticker-5">♡</div>
+    <div class="sticker sticker-6">✨</div>
+    <div class="sticker sticker-7">🌸</div>
+    <div class="sticker sticker-8">💌</div>
+    <div class="sticker sticker-9">☁️</div>
+    <div class="sticker sticker-10">୨୧</div>
+
+    <!-- MAIN HEADER -->
+
+    <div class="tag">
+        A little something for you ♡
+    </div>
 
     <div class="flower">🌷</div>
 
@@ -196,6 +392,8 @@ button:hover {
     <p class="subtitle">
         Just a little reminder that the world is better with you in it.
     </p>
+
+    <!-- LETTER -->
 
     <div class="letter">
 
@@ -241,6 +439,8 @@ button:hover {
 
     </div>
 
+    <!-- SURPRISE BUTTON -->
+
     <button onclick="showSurprise()">
         Click for a little surprise ♡
     </button>
@@ -250,6 +450,8 @@ button:hover {
         <br>
         ✨🌸🦋✨
     </div>
+
+    <!-- FOOTER -->
 
     <div class="footer">
         MADE WITH LOVE, JUST FOR YOU ♡
@@ -264,13 +466,22 @@ button:hover {
 const symbols = ["♡", "♥", "✿", "✨"];
 
 function createHeart() {
+
     const heart = document.createElement("div");
+
     heart.className = "heart";
-    heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+
+    heart.innerHTML = symbols[
+        Math.floor(Math.random() * symbols.length)
+    ];
 
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (6 + Math.random() * 6) + "s";
-    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+    heart.style.animationDuration =
+        (6 + Math.random() * 6) + "s";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 20) + "px";
 
     document.body.appendChild(heart);
 
@@ -281,11 +492,15 @@ function createHeart() {
 
 setInterval(createHeart, 700);
 
+
 // SURPRISE BUTTON
 
 function showSurprise() {
+
     const surprise = document.getElementById("surprise");
+
     surprise.style.display = "block";
+
 }
 
 </script>
