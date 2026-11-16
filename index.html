@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Reminder for You ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff0f3, #fce4ec, #f5e6ff);
+    font-family: 'Quicksand', sans-serif;
+    color: #755665;
+    overflow-x: hidden;
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    bottom: -50px;
+    color: #e9a6bc;
+    font-size: 22px;
+    opacity: 0.6;
+    animation: floatUp 9s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: 0.7; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* MAIN CONTENT */
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    margin: auto;
+    padding: 70px 25px;
+    text-align: center;
+}
+
+.tag {
+    display: inline-block;
+    border: 1px solid #e9b6c9;
+    padding: 9px 20px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    background: rgba(255,255,255,0.5);
+}
+
+h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(42px, 8vw, 75px);
+    font-weight: normal;
+    color: #bd7895;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #967789;
+    margin-bottom: 40px;
+}
+
+.flower {
+    font-size: 45px;
+    margin: 20px;
+    animation: wiggle 3s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(8deg); }
+}
+
+/* LETTER */
+
+.letter {
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 45px 35px;
+    background: rgba(255,255,255,0.65);
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(174,115,145,0.12);
+    text-align: left;
+    line-height: 2;
+    font-size: 15px;
+}
+
+.letter h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    color: #c17e9c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.letter p {
+    margin-bottom: 17px;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+    color: #bd7895;
+    text-align: right;
+    margin-top: 25px;
+}
+
+/* BUTTON */
+
+button {
+    border: none;
+    background: #d99ab5;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 40px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(190,120,155,0.2);
+}
+
+button:hover {
+    transform: translateY(-4px);
+    background: #c47f9e;
+}
+
+#surprise {
+    display: none;
+    margin: 30px auto;
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+    color: #bd7895;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    margin-top: 65px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="tag">A little something for you ♡</div>
+
+    <div class="flower">🌷</div>
+
+    <h1>Hey, Beautiful Soul.</h1>
+
+    <p class="subtitle">
+        Just a little reminder that the world is better with you in it.
+    </p>
+
+    <div class="letter">
+
+        <h2>A little note for you...</h2>
+
+        <p>Hey girl!! ♡</p>
+
+        <p>
+        I just wanted to make you a little something to remind you
+        how amazing you are. Sometimes life gets a little overwhelming,
+        and we forget to appreciate ourselves and all the beautiful
+        things that make us who we are.
+        </p>
+
+        <p>
+        So here's your reminder: you are loved, you are appreciated,
+        and you are so much more capable than you sometimes give
+        yourself credit for.
+        </p>
+
+        <p>
+        You don't have to have everything figured out. You don't
+        have to be happy every second of every day. You're allowed
+        to have bad days, to rest, to cry, and to take things slowly.
+        Just don't forget that those bad days don't define you.
+        </p>
+
+        <p>
+        I hope you never forget how special you are. There are so
+        many beautiful things waiting for you, and I can't wait
+        to see all the wonderful things life has in store for you.
+        </p>
+
+        <p>
+        Until then, take a deep breath, give yourself some love,
+        and remember that you've got people cheering you on.
+        Always. ♡
+        </p>
+
+        <div class="signature">
+            With lots of love ♡
+        </div>
+
+    </div>
+
+    <button onclick="showSurprise()">
+        Click for a little surprise ♡
+    </button>
+
+    <div id="surprise">
+        You're someone's favourite person. Never forget that! 💗
+        <br>
+        ✨🌸🦋✨
+    </div>
+
+    <div class="footer">
+        MADE WITH LOVE, JUST FOR YOU ♡
+    </div>
+
+</div>
+
+<script>
+
+// FLOATING HEARTS
+
+const symbols = ["♡", "♥", "✿", "✨"];
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (6 + Math.random() * 6) + "s";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 12000);
+}
+
+setInterval(createHeart, 700);
+
+// SURPRISE BUTTON
+
+function showSurprise() {
+    const surprise = document.getElementById("surprise");
+    surprise.style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
